@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/Win11Desktop.png-9e5f363ca9468aa9d3282c578a51e6df.stex"
+
+[node name="Main" type="Node"]
+
+[node name="Win11" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource( 1 )
