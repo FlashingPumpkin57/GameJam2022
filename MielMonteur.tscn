@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://art/mielmonteur-attack1-02.png" type="Texture" id=1]
 [ext_resource path="res://art/mielmonteur-attack1-03.png" type="Texture" id=2]
@@ -10,10 +10,18 @@
 [ext_resource path="res://art/mielmonteur-idle-2-02.png" type="Texture" id=8]
 [ext_resource path="res://art/mielmonteur-idle-2-03.png" type="Texture" id=9]
 [ext_resource path="res://art/mielmonteur-attack1-01.png" type="Texture" id=10]
+[ext_resource path="res://art/mielmonteur-fall-01.png" type="Texture" id=11]
 [ext_resource path="res://art/mielmonteur-jump-03.png" type="Texture" id=12]
 [ext_resource path="res://art/mielmonteur-jump-01.png" type="Texture" id=13]
 [ext_resource path="res://art/mielmonteur-jump-02.png" type="Texture" id=14]
 [ext_resource path="res://art/mielmonteur-jump-00.png" type="Texture" id=15]
+[ext_resource path="res://art/mielmonteur-fall-00.png" type="Texture" id=16]
+[ext_resource path="res://art/mielmonteur-run-00.png" type="Texture" id=17]
+[ext_resource path="res://art/mielmonteur-run-01.png" type="Texture" id=18]
+[ext_resource path="res://art/mielmonteur-run-03.png" type="Texture" id=19]
+[ext_resource path="res://art/mielmonteur-run-04.png" type="Texture" id=20]
+[ext_resource path="res://art/mielmonteur-run-02.png" type="Texture" id=21]
+[ext_resource path="res://art/mielmonteur-run-05.png" type="Texture" id=22]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -27,14 +35,19 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 10 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "slash",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 10 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 16 ), ExtResource( 11 ) ],
 "loop": true,
-"name": "slash",
+"name": "fall",
 "speed": 5.0
 } ]
 
@@ -47,8 +60,10 @@ script = ExtResource( 5 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-animation = "slash"
+animation = "fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -4, 13 )
 shape = SubResource( 2 )
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

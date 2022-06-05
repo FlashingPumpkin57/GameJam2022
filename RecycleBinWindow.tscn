@@ -1,7 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://art/RecycleBin.png" type="Texture" id=1]
+[ext_resource path="res://art/recycleItems/ball.jpeg" type="Texture" id=1]
 [ext_resource path="res://RecycleBinWindow.gd" type="Script" id=2]
+[ext_resource path="res://art/recycleItems/lingo.jpg" type="Texture" id=3]
+[ext_resource path="res://art/recycleItems/bootspul.png" type="Texture" id=4]
+[ext_resource path="res://art/recycleItems/meme1.png" type="Texture" id=5]
+[ext_resource path="res://art/recycleItems/meme2.png" type="Texture" id=6]
+[ext_resource path="res://art/recycleItems/meme3.png" type="Texture" id=7]
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/RecycleBin.png-bc61a53975fa0cc0ca926a87be290f8b.stex"
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1.5, 344.5 )
@@ -17,7 +26,7 @@ margin_left = 423.0
 margin_top = 150.0
 margin_right = 1402.0
 margin_bottom = 840.0
-texture = ExtResource( 1 )
+texture = SubResource( 3 )
 
 [node name="BorderLeft" type="CollisionShape2D" parent="."]
 position = Vector2( 620.5, 496 )
@@ -37,3 +46,63 @@ shape = SubResource( 2 )
 
 [node name="StartingPosition" type="Position2D" parent="."]
 position = Vector2( 662, 756 )
+
+[node name="ball" type="Sprite" parent="."]
+position = Vector2( 774, 411 )
+scale = Vector2( 0.790323, 0.790323 )
+texture = ExtResource( 1 )
+
+[node name="ball_coll" type="CollisionPolygon2D" parent="."]
+position = Vector2( 774, 411 )
+scale = Vector2( 0.790323, 0.790323 )
+polygon = PoolVector2Array( 151, 31, -151, 31, -151, -31, 151, -31 )
+
+[node name="lingo" type="Sprite" parent="."]
+position = Vector2( 1261.06, 593.799 )
+scale = Vector2( 0.133072, 0.133072 )
+texture = ExtResource( 3 )
+
+[node name="lingo_coll" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1261.06, 593.799 )
+scale = Vector2( 0.133072, 0.133072 )
+polygon = PoolVector2Array( 686, 511, -686, 511, -686, -511, 686, -511 )
+
+[node name="bootspul" type="Sprite" parent="."]
+position = Vector2( 948.268, 495.17 )
+scale = Vector2( 0.259518, 0.259518 )
+texture = ExtResource( 4 )
+
+[node name="bootspul_coll" type="CollisionPolygon2D" parent="."]
+position = Vector2( 948.268, 495.17 )
+scale = Vector2( 0.259518, 0.259518 )
+polygon = PoolVector2Array( 451, 142.5, -451, 142.5, -451, -142.5, 451, -142.5 )
+
+[node name="meme1" type="Sprite" parent="."]
+position = Vector2( 1293.12, 416.063 )
+scale = Vector2( 0.259518, 0.259518 )
+texture = ExtResource( 5 )
+
+[node name="meme1_coll" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1293.12, 416.063 )
+scale = Vector2( 0.259518, 0.259518 )
+polygon = PoolVector2Array( 296.5, 188, -296.5, 188, -296.5, -188, 296.5, -188 )
+
+[node name="meme2" type="Sprite" parent="."]
+position = Vector2( 1048.72, 702.918 )
+scale = Vector2( 0.259518, 0.259518 )
+texture = ExtResource( 6 )
+
+[node name="meme2_coll" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1047.72, 703.918 )
+scale = Vector2( 0.259518, 0.259518 )
+polygon = PoolVector2Array( 283.5, 231, -283.5, 231, -283.5, -231, 283.5, -231 )
+
+[node name="meme3" type="Sprite" parent="."]
+position = Vector2( 855, 734 )
+scale = Vector2( 0.191615, 0.191615 )
+texture = ExtResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 855, 734 )
+scale = Vector2( 0.191615, 0.191615 )
+polygon = PoolVector2Array( 288.5, 242.5, -288.5, 242.5, -288.5, -242.5, 288.5, -242.5 )
