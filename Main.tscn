@@ -14,5 +14,3 @@ z_index = 2
 position = Vector2( 960, 540 )
 
 [node name="Win11" parent="." instance=ExtResource( 3 )]
-
-[connection signal="hit" from="MielMonteur" to="." method="_on_MielMonteur_hit"]
