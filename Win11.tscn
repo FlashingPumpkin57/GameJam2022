@@ -1,7 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [sub_resource type="StreamTexture" id=2]
-load_path = "res://.import/Win11Desktop.png-9e5f363ca9468aa9d3282c578a51e6df.stex"
+flags = 4
+load_path = "res://.import/11NoIcons.png-47556f6061ca2c66547d0a7b3fd93d69.stex"
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 0.75, 509 )
@@ -23,18 +24,18 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="BorderLeft" type="CollisionShape2D" parent="."]
 position = Vector2( 1.5, 507 )
 shape = SubResource( 3 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="BorderRight" type="CollisionShape2D" parent="."]
 position = Vector2( 1920, 509 )
 shape = SubResource( 3 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2( 960, 1016 )
+[node name="BorderBottom" type="CollisionShape2D" parent="."]
+position = Vector2( 960, 1008 )
 shape = SubResource( 4 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+[node name="BorderTop" type="CollisionShape2D" parent="."]
 position = Vector2( 960, 0 )
 shape = SubResource( 4 )
