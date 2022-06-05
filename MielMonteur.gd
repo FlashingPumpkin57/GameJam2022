@@ -4,7 +4,8 @@ signal hit
 
 
 export var speed = 400
-export var gravity = 100
+const default_gravity = 300
+export var gravity = default_gravity
 var screen_size
 
 # Called when the node enters the scene tree for the first time.
@@ -41,25 +42,27 @@ func _physics_process(delta):
 #	position += velocity * delta
 #	position.x = clamp(position.x, 0, screen_size.x)
 #	position.y = clamp(position.y, 0, screen_size.y)
-	
-	if vel.x != 0:
-		$AnimatedSprite.animation = "walk"
-		# See the note below about boolean assignment.
-		$AnimatedSprite.flip_h = vel.x < 0
-	elif vel.y != 0:
-		$AnimatedSprite.animation = "up"
-#		if vel.y > 0:
-#			$AnimatedSprite.stop()
-	if idle:
-#		$AnimatedSprite.play()
-		$AnimatedSprite.animation = "idle"
 		
 	var coll = move_and_collide(vel)
 	
 	if coll != null:
-#		$AnimatedSprite.animation = "walk"
+		gravity = 0
 		move_local_x(vel.x)
 		move_local_y(vel.y)
+	else:
+		gravity = default_gravity
+		
+	var on_ground = gravity == 0
+
+	if vel.y < 0:
+		$AnimatedSprite.animation = "up"
+	elif vel.y > 0 && !on_ground:
+		$AnimatedSprite.stop()
+	if on_ground && vel.x != 0:
+		$AnimatedSprite.animation = "walk"
+		$AnimatedSprite.flip_h = vel.x < 0
+	if idle:
+		$AnimatedSprite.animation = "idle"
 	
 func start(pos):
 	position = pos

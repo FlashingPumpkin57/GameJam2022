@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/playerGrey_walk2.png-34d2d916366100182d08037c51884043.stex"
+path="res://.import/Trash Can.png-01f795e8a152a9eddb5dec77e09fe878.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/playerGrey_walk2.png"
-dest_files=[ "res://.import/playerGrey_walk2.png-34d2d916366100182d08037c51884043.stex" ]
+source_file="res://art/Trash Can.png"
+dest_files=[ "res://.import/Trash Can.png-01f795e8a152a9eddb5dec77e09fe878.stex" ]
 
 [params]
 

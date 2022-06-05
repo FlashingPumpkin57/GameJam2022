@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/playerGrey_up1.png-6bd114d0a6beac91f48e3a7314d44564.stex"
+path="res://.import/mielmonteur-jump-01.png-04c2ad61f4c1ee969d2d2a70e375e4de.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/playerGrey_up1.png"
-dest_files=[ "res://.import/playerGrey_up1.png-6bd114d0a6beac91f48e3a7314d44564.stex" ]
+source_file="res://art/mielmonteur-jump-01.png"
+dest_files=[ "res://.import/mielmonteur-jump-01.png-04c2ad61f4c1ee969d2d2a70e375e4de.stex" ]
 
 [params]
 
